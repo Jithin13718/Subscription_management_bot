@@ -1,22 +1,28 @@
-// logger.js
-const winston = require("winston");
+// cache.js
+const NodeCache = require("node-cache");
 
-const logger = winston.createLogger({
-  level: "info",
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.printf(({ timestamp, level, message }) => {
-      return `[${timestamp}] ${level.toUpperCase()}: ${message}`;
-    })
-  ),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: "logs/app.log" })
-  ]
-);
+// Default TTL = 300 seconds (5 minutes)
+const cache = new NodeCache({ stdTTL: 300, checkperiod: 60 });
 
-module.exports = logger;
+function setCache(key, value, ttl = 300) {
+  cache.set(key, value, ttl);
+}
+
+function getCache(key) {
+  return cache.get(key);
+}
+
+function deleteCache(key) {
+  cache.del(key);
+}
+
+function clearCache() {
+  cache.flushAll();
+}
+
+module.exports = { setCache, getCache, deleteCache, clearCache };
 
 // Example usage:
-// const logger = require("./utils/logger");
-// logger.info("Server started successfully");
+// const { setCache, getCache } = require("./utils/cache");
+// setCache("user123_plan", "Pro");
+// console.log(getCache("user123_plan"));
