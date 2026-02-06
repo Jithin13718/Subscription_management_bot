@@ -1,1 +1,21 @@
-
+{
+  "intent": "billing_inquiries",
+  "examples": [
+    "Show me my last invoice",
+    "I need a receipt for January",
+    "What is my current balance?",
+    "Update my payment method",
+    "Refund my last payment",
+    "Why was I charged twice?"
+  ],
+  "responses": [
+    "I can help with billing. Do you want to see invoices, update payment info, or request a refund?",
+    "Sure, let me fetch your billing details.",
+    "I’ll check your payment history and provide the latest invoice."
+  ],
+  "entities": [
+    "invoice_id",
+    "payment_method",
+    "refund_request"
+  ]
+}
