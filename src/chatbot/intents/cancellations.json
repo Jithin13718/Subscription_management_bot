@@ -1,1 +1,21 @@
-
+{
+  "intent": "cancellations",
+  "examples": [
+    "Cancel my subscription",
+    "I want to stop my plan",
+    "End my account",
+    "Terminate my membership",
+    "I’m thinking of leaving",
+    "Pause my subscription"
+  ],
+  "responses": [
+    "I’m sorry to hear that. Would you like to pause your subscription instead?",
+    "Before you cancel, can I show you some retention options like discounts or plan downgrades?",
+    "I can cancel your subscription. Please confirm you want to proceed."
+  ],
+  "entities": [
+    "cancellation_reason",
+    "pause_option",
+    "discount_offer"
+  ]
+}
