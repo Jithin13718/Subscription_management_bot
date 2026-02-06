@@ -1,1 +1,24 @@
-
+{
+  "port": 8080,
+  "stripe": {
+    "secretKey": "sk_live_your_prod_key_here"
+  },
+  "chargebee": {
+    "site": "your-prod-site",
+    "apiKey": "your_prod_api_key_here"
+  },
+  "database": {
+    "host": "prod-db-host",
+    "port": 5432,
+    "name": "chatbot_prod",
+    "user": "prod_user",
+    "password": "secure_prod_password"
+  },
+  "logging": {
+    "level": "warn"
+  },
+  "features": {
+    "enableChurnModel": true,
+    "enableScaleDown": true
+  }
+}
