@@ -1,1 +1,21 @@
-
+{
+  "intent": "plan_changes",
+  "examples": [
+    "I want to upgrade my plan",
+    "Downgrade me to the basic plan",
+    "Switch from Pro to Enterprise",
+    "Change my subscription level",
+    "Move me to a cheaper plan",
+    "Upgrade to premium features"
+  ],
+  "responses": [
+    "Sure, I can help you change your plan. Which plan would you like to switch to?",
+    "Got it. Do you want to upgrade or downgrade your subscription?",
+    "I can update your subscription. Please confirm the new plan."
+  ],
+  "entities": [
+    "plan_type",
+    "upgrade",
+    "downgrade"
+  ]
+}
